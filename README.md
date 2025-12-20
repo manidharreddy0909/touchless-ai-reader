@@ -230,3 +230,107 @@ Computer Vision & AI Developer
 
 
 
+---
+
+## 📅 Day 7: Gesture Smoothing & Touchless Page Control
+
+### 🎯 Objective
+Transform gesture recognition into a **usable application feature** by stabilizing predictions
+and mapping gestures to real system actions such as page turning and scrolling.
+
+---
+
+### 🧠 What Was Accomplished
+
+- Implemented **temporal gesture smoothing** using a sliding window majority vote
+- Reduced prediction flickering and false triggers
+- Introduced **gesture-change gating** to avoid repeated actions
+- Integrated **system-level control** using PyAutoGUI
+- Enabled real-time interaction with PDFs and browsers (Chrome)
+
+---
+
+### 🧩 Gesture → Action Mapping
+
+| Gesture | Action |
+|-------|--------|
+| Open Palm | Next Page |
+| Fist | Previous Page |
+| Index Point | Scroll |
+| Two Fingers | Zoom In |
+| Pinch | Click / Select |
+
+---
+
+### 🛠 Technologies Used
+- PyAutoGUI
+- Collections (deque)
+- OpenCV (UI overlay)
+
+---
+
+## 🖱️ One-Click Application Launch (Windows)
+
+For demos and non-technical users, the project supports **double-click execution**
+without requiring VS Code.
+
+### ▶️ How to Run Without VS Code
+
+1. Open **Google Chrome**
+2. Load a PDF file
+3. Click once inside the PDF viewer
+4. Navigate to the project root directory
+5. Double-click:
+
+
+
+
+The launcher will:
+- Activate the Python virtual environment
+- Start the webcam
+- Enable gesture-based page control
+
+---
+
+### ⛔ Exit Controls
+- Press **Q** or **ESC** in the camera window
+- OR move the mouse to the **top-left corner** (PyAutoGUI failsafe)
+
+---
+
+## 🧠 Overall System Pipeline
+
+Camera
+↓
+Hand Landmark Detection
+↓
+Feature Extraction
+↓
+ML Gesture Classification
+↓
+Gesture Smoothing
+↓
+Action Controller
+↓
+Touchless Page Interaction
+
+
+---
+
+## 📌 Final Project Status
+
+- [x] Hand tracking
+- [x] Feature engineering
+- [x] Dataset creation
+- [x] Model training
+- [x] Real-time gesture recognition
+- [x] Gesture smoothing
+- [x] Touchless page control
+- [ ] Facial gesture integration
+- [ ] UI dashboard
+- [ ] Research publication
+
+---
+
+## 📜 License
+This project is intended for **educational, research, and demonstration purposes**.
