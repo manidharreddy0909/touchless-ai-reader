@@ -24,11 +24,9 @@ class HandLandmarkDetector:
         return self.hands.process(rgb)
 
     def draw(self, frame, hand_landmarks):
-         self.drawer.draw_landmarks(
-          frame,
-          hand_landmarks,
-          self.mp_hands.HAND_CONNECTIONS,
-          self.drawer.DrawingSpec(color=(0, 255, 0), thickness=2, circle_radius=3),
-        self.drawer.DrawingSpec(color=(255, 0, 0), thickness=2)
+      self.drawer.draw_landmarks(
+       frame,
+       hand_landmarks,
+       self.mp_hands.HAND_CONNECTIONS
 )
 
