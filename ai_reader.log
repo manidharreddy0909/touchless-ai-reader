@@ -2248,3 +2248,480 @@
 2026-01-06 15:34:11,408 — INFO — Right Wink Right Click
 2026-01-06 15:34:21,451 — INFO — Right Wink Right Click
 2026-01-06 15:34:25,081 — INFO — Left Wink Click
+2026-01-06 17:33:29,645 — WARNING — From C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-01-06 17:43:18,312 — INFO — Right Wink Right Click
+2026-01-06 17:43:19,642 — INFO — Right Wink Right Click
+2026-01-06 17:44:12,452 — INFO — Right Wink Right Click
+2026-01-06 17:45:34,425 — INFO — Left Wink Click
+2026-01-06 17:45:41,823 — INFO — Right Wink Right Click
+2026-01-06 17:45:54,885 — INFO — Left Wink Click
+2026-01-06 17:45:55,818 — INFO — Left Wink Click
+2026-01-06 17:45:57,905 — INFO — Left Wink Click
+2026-01-06 17:46:00,821 — INFO — Left Wink Click
+2026-01-06 17:46:02,404 — INFO — Left Wink Click
+2026-01-06 17:46:03,388 — INFO — Left Wink Click
+2026-01-06 17:46:09,784 — INFO — Right Wink Right Click
+2026-01-06 17:46:10,849 — INFO — Right Wink Right Click
+2026-01-06 17:46:39,372 — INFO — Right Wink Right Click
+2026-01-06 17:47:04,305 — INFO — Right Wink Right Click
+2026-01-06 17:47:07,744 — INFO — Left Wink Click
+2026-01-06 17:47:08,245 — INFO — Right Wink Right Click
+2026-01-11 16:30:13,945 — WARNING — From C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-01-16 02:00:31,897 — WARNING — From C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-01-16 02:16:38,971 — INFO — Left Wink Click
+2026-01-16 02:16:39,929 — INFO — Left Wink Click
+2026-01-16 02:16:40,389 — INFO — Left Wink Click
+2026-01-16 02:16:40,742 — INFO — Left Wink Click
+2026-01-16 02:16:41,010 — INFO — Left Wink Click
+2026-01-16 02:16:41,314 — INFO — Left Wink Click
+2026-01-16 02:16:41,998 — INFO — Left Wink Click
+2026-01-16 02:16:42,596 — INFO — Left Wink Click
+2026-01-16 02:16:44,375 — INFO — Left Wink Click
+2026-01-16 02:16:44,884 — INFO — Right Wink Right Click
+2026-01-16 02:16:45,182 — INFO — Right Wink Right Click
+2026-01-16 02:16:45,892 — INFO — Left Wink Click
+2026-01-16 02:16:46,464 — INFO — Left Wink Click
+2026-01-16 02:16:46,733 — INFO — Left Wink Click
+2026-01-16 02:16:47,046 — INFO — Left Wink Click
+2026-01-16 02:16:47,348 — INFO — Left Wink Click
+2026-01-16 02:16:47,732 — INFO — Left Wink Click
+2026-01-16 02:16:48,345 — INFO — Left Wink Click
+2026-01-16 02:16:48,640 — INFO — Left Wink Click
+2026-01-16 02:16:51,371 — INFO — Left Wink Click
+2026-01-16 02:16:51,661 — INFO — Left Wink Click
+2026-01-16 02:16:51,937 — INFO — Left Wink Click
+2026-01-16 02:16:52,247 — INFO — Left Wink Click
+2026-01-16 02:16:52,849 — INFO — Left Wink Click
+2026-01-16 02:16:53,342 — INFO — Left Wink Click
+2026-01-16 02:16:55,522 — INFO — Left Wink Click
+2026-01-16 02:16:56,136 — INFO — Left Wink Click
+2026-01-16 02:16:56,406 — INFO — Left Wink Click
+2026-01-16 02:16:56,759 — INFO — Left Wink Click
+2026-01-16 02:16:57,032 — INFO — Left Wink Click
+2026-01-16 02:16:59,106 — INFO — Left Wink Click
+2026-01-16 02:16:59,734 — INFO — Left Wink Click
+2026-01-16 02:17:00,003 — INFO — Left Wink Click
+2026-01-16 02:17:00,583 — INFO — Right Wink Right Click
+2026-01-16 02:17:00,856 — INFO — Left Wink Click
+2026-01-16 02:17:01,136 — INFO — Left Wink Click
+2026-01-16 02:17:01,411 — INFO — Left Wink Click
+2026-01-16 02:17:03,474 — INFO — Right Wink Right Click
+2026-01-16 02:17:04,572 — INFO — Right Wink Right Click
+2026-01-16 02:17:05,819 — INFO — Left Wink Click
+2026-01-16 02:17:06,607 — INFO — Left Wink Click
+2026-01-16 02:17:07,010 — INFO — Left Wink Click
+2026-01-16 02:17:07,464 — INFO — Right Wink Right Click
+2026-01-16 02:17:10,871 — INFO — Right Wink Right Click
+2026-01-16 02:17:11,421 — INFO — Right Wink Right Click
+2026-01-16 02:17:11,730 — INFO — Right Wink Right Click
+2026-01-16 02:17:12,170 — INFO — Right Wink Right Click
+2026-01-16 02:17:12,837 — INFO — Right Wink Right Click
+2026-01-16 02:17:13,203 — INFO — Right Wink Right Click
+2026-01-16 02:17:13,486 — INFO — Right Wink Right Click
+2026-01-16 02:17:13,772 — INFO — Right Wink Right Click
+2026-01-16 02:17:15,667 — INFO — Right Wink Right Click
+2026-01-16 02:17:17,633 — INFO — Right Wink Right Click
+2026-01-16 02:17:18,031 — INFO — Right Wink Right Click
+2026-01-16 02:17:18,380 — INFO — Right Wink Right Click
+2026-01-16 02:17:18,674 — INFO — Right Wink Right Click
+2026-01-16 02:17:18,950 — INFO — Right Wink Right Click
+2026-01-16 02:17:19,316 — INFO — Right Wink Right Click
+2026-01-16 02:17:19,610 — INFO — Right Wink Right Click
+2026-01-16 02:17:19,926 — INFO — Right Wink Right Click
+2026-01-16 02:17:55,334 — INFO — Right Wink Right Click
+2026-01-16 02:17:56,242 — INFO — Right Wink Right Click
+2026-01-16 02:17:57,124 — INFO — Right Wink Right Click
+2026-01-16 02:17:58,332 — INFO — Right Wink Right Click
+2026-01-16 02:18:09,276 — INFO — Right Wink Right Click
+2026-01-16 02:18:11,670 — INFO — Right Wink Right Click
+2026-01-16 02:18:12,935 — INFO — Right Wink Right Click
+2026-01-16 02:18:15,530 — INFO — Left Wink Click
+2026-01-16 02:18:16,812 — INFO — Right Wink Right Click
+2026-01-16 02:18:31,828 — INFO — Right Wink Right Click
+2026-01-16 02:18:34,131 — INFO — Right Wink Right Click
+2026-01-16 02:18:34,719 — INFO — Right Wink Right Click
+2026-01-16 02:18:40,002 — INFO — Right Wink Right Click
+2026-01-16 02:18:41,742 — INFO — Right Wink Right Click
+2026-01-16 02:19:15,862 — INFO — Right Wink Right Click
+2026-01-16 02:19:19,760 — INFO — Right Wink Right Click
+2026-01-16 02:19:36,208 — INFO — Left Wink Click
+2026-01-16 02:20:00,587 — INFO — Left Wink Click
+2026-01-16 02:20:17,093 — INFO — Left Wink Click
+2026-01-16 02:20:17,961 — INFO — Left Wink Click
+2026-01-16 02:20:23,471 — INFO — Left Wink Click
+2026-01-16 02:20:24,977 — INFO — Right Wink Right Click
+2026-01-16 02:20:37,195 — INFO — Right Wink Right Click
+2026-01-16 02:20:38,622 — INFO — Left Wink Click
+2026-01-16 02:20:48,880 — INFO — Right Wink Right Click
+2026-01-16 02:20:53,509 — INFO — Right Wink Right Click
+2026-01-16 02:20:54,242 — INFO — Right Wink Right Click
+2026-01-16 02:20:55,741 — INFO — Left Wink Click
+2026-01-16 02:20:56,102 — INFO — Left Wink Click
+2026-01-16 02:21:10,480 — INFO — Left Wink Click
+2026-01-16 02:21:11,327 — INFO — Left Wink Click
+2026-01-16 02:21:13,201 — INFO — Left Wink Click
+2026-01-16 02:21:14,235 — INFO — Left Wink Click
+2026-01-16 02:21:26,740 — INFO — Left Wink Click
+2026-01-16 02:21:40,545 — INFO — Left Wink Click
+2026-01-16 02:21:44,551 — INFO — Left Wink Click
+2026-01-16 02:21:44,945 — INFO — Left Wink Click
+2026-01-16 02:21:45,489 — INFO — Left Wink Click
+2026-01-16 02:21:49,728 — INFO — Right Wink Right Click
+2026-01-16 02:21:52,289 — INFO — Left Wink Click
+2026-01-16 02:21:52,691 — INFO — Left Wink Click
+2026-01-16 02:21:52,969 — INFO — Left Wink Click
+2026-01-16 02:22:01,398 — INFO — Right Wink Right Click
+2026-01-16 02:22:02,883 — INFO — Right Wink Right Click
+2026-01-16 02:22:04,248 — INFO — Right Wink Right Click
+2026-01-16 02:22:05,930 — INFO — Right Wink Right Click
+2026-01-16 02:22:08,094 — INFO — Right Wink Right Click
+2026-01-16 02:22:08,994 — INFO — Left Wink Click
+2026-01-16 02:22:10,042 — INFO — Left Wink Click
+2026-01-16 02:22:11,584 — INFO — Left Wink Click
+2026-01-16 02:22:14,847 — INFO — Right Wink Right Click
+2026-01-16 02:22:15,805 — INFO — Left Wink Click
+2026-01-16 02:22:16,337 — INFO — Left Wink Click
+2026-01-16 02:22:20,918 — INFO — Right Wink Right Click
+2026-01-16 02:22:21,266 — INFO — Left Wink Click
+2026-01-16 02:22:27,743 — INFO — Left Wink Click
+2026-01-16 02:22:35,023 — INFO — Left Wink Click
+2026-01-16 02:23:07,144 — INFO — Right Wink Right Click
+2026-01-16 02:23:08,126 — INFO — Right Wink Right Click
+2026-01-16 02:23:09,408 — INFO — Left Wink Click
+2026-01-16 02:23:11,832 — INFO — Left Wink Click
+2026-01-16 02:23:13,490 — INFO — Left Wink Click
+2026-01-16 02:23:14,763 — INFO — Left Wink Click
+2026-01-16 02:23:15,386 — INFO — Left Wink Click
+2026-01-16 02:23:15,835 — INFO — Left Wink Click
+2026-01-16 02:23:17,711 — INFO — Left Wink Click
+2026-01-16 02:23:18,135 — INFO — Left Wink Click
+2026-01-16 02:23:19,340 — INFO — Left Wink Click
+2026-01-16 02:23:20,433 — INFO — Left Wink Click
+2026-01-16 02:23:21,245 — INFO — Right Wink Right Click
+2026-01-16 02:23:22,197 — INFO — Left Wink Click
+2026-01-16 02:23:22,499 — INFO — Right Wink Right Click
+2026-01-16 02:23:25,545 — INFO — Right Wink Right Click
+2026-01-16 02:23:25,826 — INFO — Left Wink Click
+2026-01-16 02:23:26,163 — INFO — Left Wink Click
+2026-01-16 02:23:26,721 — INFO — Right Wink Right Click
+2026-01-16 02:23:27,908 — INFO — Left Wink Click
+2026-01-16 02:23:28,226 — INFO — Left Wink Click
+2026-01-16 02:23:29,384 — INFO — Left Wink Click
+2026-01-16 02:23:29,684 — INFO — Left Wink Click
+2026-01-16 02:23:36,560 — INFO — Left Wink Click
+2026-01-16 02:23:37,160 — INFO — Left Wink Click
+2026-01-16 02:23:37,645 — INFO — Left Wink Click
+2026-01-16 02:23:37,937 — INFO — Left Wink Click
+2026-01-16 02:23:38,221 — INFO — Left Wink Click
+2026-01-16 02:23:38,791 — INFO — Left Wink Click
+2026-01-16 02:23:39,398 — INFO — Left Wink Click
+2026-01-16 02:23:39,728 — INFO — Left Wink Click
+2026-01-16 02:23:40,225 — INFO — Left Wink Click
+2026-01-16 02:23:40,922 — INFO — Left Wink Click
+2026-01-16 02:23:41,235 — INFO — Left Wink Click
+2026-01-16 02:23:41,771 — INFO — Left Wink Click
+2026-01-16 02:23:42,211 — INFO — Left Wink Click
+2026-01-16 02:23:42,595 — INFO — Left Wink Click
+2026-01-16 02:23:42,870 — INFO — Left Wink Click
+2026-01-16 02:23:43,225 — INFO — Left Wink Click
+2026-01-16 02:23:43,597 — INFO — Left Wink Click
+2026-01-16 02:23:43,904 — INFO — Left Wink Click
+2026-01-16 02:23:44,239 — INFO — Left Wink Click
+2026-01-16 02:23:45,656 — INFO — Right Wink Right Click
+2026-01-16 02:23:48,340 — INFO — Left Wink Click
+2026-01-16 02:23:49,572 — INFO — Left Wink Click
+2026-01-16 02:23:49,870 — INFO — Left Wink Click
+2026-01-16 02:23:50,944 — INFO — Left Wink Click
+2026-01-16 02:23:53,210 — INFO — Left Wink Click
+2026-01-16 02:23:58,514 — INFO — Left Wink Click
+2026-01-16 02:24:07,624 — INFO — Left Wink Click
+2026-01-16 02:24:08,863 — INFO — Left Wink Click
+2026-01-16 02:24:09,283 — INFO — Left Wink Click
+2026-01-16 02:24:10,033 — INFO — Left Wink Click
+2026-01-16 02:24:10,621 — INFO — Left Wink Click
+2026-01-16 02:24:11,253 — INFO — Left Wink Click
+2026-01-16 02:24:11,748 — INFO — Right Wink Right Click
+2026-01-16 02:24:12,157 — INFO — Left Wink Click
+2026-01-16 02:24:12,687 — INFO — Left Wink Click
+2026-01-16 02:24:13,011 — INFO — Left Wink Click
+2026-01-16 02:24:13,413 — INFO — Left Wink Click
+2026-01-16 02:24:26,476 — INFO — Left Wink Click
+2026-01-16 02:24:32,552 — INFO — Left Wink Click
+2026-01-16 02:24:43,261 — INFO — Left Wink Click
+2026-01-16 02:24:51,247 — INFO — Right Wink Right Click
+2026-01-16 02:24:53,900 — INFO — Right Wink Right Click
+2026-01-16 02:24:55,732 — INFO — Right Wink Right Click
+2026-01-16 02:24:56,398 — INFO — Right Wink Right Click
+2026-01-16 02:24:58,746 — INFO — Left Wink Click
+2026-01-16 02:25:03,164 — INFO — Left Wink Click
+2026-01-16 02:25:04,691 — INFO — Right Wink Right Click
+2026-01-16 02:25:06,779 — INFO — Right Wink Right Click
+2026-01-16 02:25:07,327 — INFO — Right Wink Right Click
+2026-01-16 02:25:15,034 — INFO — Right Wink Right Click
+2026-01-16 02:25:17,875 — INFO — Right Wink Right Click
+2026-01-16 02:25:39,078 — INFO — Left Wink Click
+2026-01-16 02:25:40,177 — INFO — Right Wink Right Click
+2026-01-16 02:25:44,373 — INFO — Right Wink Right Click
+2026-01-16 02:25:45,884 — INFO — Right Wink Right Click
+2026-01-16 02:25:46,328 — INFO — Right Wink Right Click
+2026-01-16 02:25:47,564 — INFO — Right Wink Right Click
+2026-01-16 02:25:47,849 — INFO — Right Wink Right Click
+2026-01-16 02:25:49,818 — INFO — Right Wink Right Click
+2026-01-16 02:25:50,078 — INFO — Left Wink Click
+2026-01-16 02:25:50,359 — INFO — Left Wink Click
+2026-01-16 02:25:51,312 — INFO — Left Wink Click
+2026-01-16 02:25:51,707 — INFO — Left Wink Click
+2026-01-16 02:25:51,995 — INFO — Left Wink Click
+2026-01-16 02:25:53,759 — INFO — Left Wink Click
+2026-01-16 02:25:56,516 — INFO — Left Wink Click
+2026-01-16 02:25:58,412 — INFO — Left Wink Click
+2026-01-16 02:25:59,839 — INFO — Left Wink Click
+2026-01-16 02:26:00,147 — INFO — Left Wink Click
+2026-01-16 02:26:02,987 — INFO — Right Wink Right Click
+2026-01-16 02:26:05,987 — INFO — Right Wink Right Click
+2026-01-16 02:26:06,797 — INFO — Left Wink Click
+2026-01-16 02:26:07,870 — INFO — Left Wink Click
+2026-01-16 02:26:08,744 — INFO — Left Wink Click
+2026-01-16 02:26:09,658 — INFO — Left Wink Click
+2026-01-16 02:26:10,904 — INFO — Left Wink Click
+2026-01-16 02:26:11,726 — INFO — Left Wink Click
+2026-01-16 02:26:12,575 — INFO — Left Wink Click
+2026-01-16 02:26:13,057 — INFO — Right Wink Right Click
+2026-01-16 02:26:14,137 — INFO — Right Wink Right Click
+2026-01-16 02:26:14,840 — INFO — Right Wink Right Click
+2026-01-16 02:26:15,240 — INFO — Right Wink Right Click
+2026-01-16 02:26:15,437 — INFO — Right Wink Right Click
+2026-01-16 02:26:15,801 — INFO — Right Wink Right Click
+2026-01-16 02:26:16,074 — INFO — Right Wink Right Click
+2026-01-16 02:26:16,404 — INFO — Right Wink Right Click
+2026-01-16 02:26:16,672 — INFO — Right Wink Right Click
+2026-01-16 02:26:17,023 — INFO — Right Wink Right Click
+2026-01-16 02:26:17,286 — INFO — Right Wink Right Click
+2026-01-16 02:26:17,614 — INFO — Right Wink Right Click
+2026-01-16 02:26:17,907 — INFO — Right Wink Right Click
+2026-01-16 02:26:19,007 — INFO — Right Wink Right Click
+2026-01-16 02:26:19,282 — INFO — Right Wink Right Click
+2026-01-16 02:26:19,562 — INFO — Right Wink Right Click
+2026-01-16 02:26:19,823 — INFO — Right Wink Right Click
+2026-01-16 02:26:20,077 — INFO — Right Wink Right Click
+2026-01-16 02:26:20,437 — INFO — Right Wink Right Click
+2026-01-16 02:26:20,707 — INFO — Right Wink Right Click
+2026-01-16 02:26:21,035 — INFO — Right Wink Right Click
+2026-01-16 02:26:21,301 — INFO — Right Wink Right Click
+2026-01-16 02:26:21,593 — INFO — Right Wink Right Click
+2026-01-16 02:26:21,858 — INFO — Right Wink Right Click
+2026-01-16 02:26:22,118 — INFO — Right Wink Right Click
+2026-01-16 02:26:22,370 — INFO — Right Wink Right Click
+2026-01-16 02:26:22,662 — INFO — Right Wink Right Click
+2026-01-16 02:26:24,251 — INFO — Left Wink Click
+2026-01-16 02:26:24,559 — INFO — Left Wink Click
+2026-01-16 02:26:24,830 — INFO — Left Wink Click
+2026-01-16 02:26:25,097 — INFO — Left Wink Click
+2026-01-16 02:26:25,428 — INFO — Left Wink Click
+2026-01-16 02:26:25,724 — INFO — Left Wink Click
+2026-01-16 02:26:26,003 — INFO — Left Wink Click
+2026-01-16 02:26:26,277 — INFO — Left Wink Click
+2026-01-16 02:26:26,594 — INFO — Left Wink Click
+2026-01-16 02:26:27,458 — INFO — Left Wink Click
+2026-01-16 02:26:27,950 — INFO — Left Wink Click
+2026-01-16 02:26:28,236 — INFO — Left Wink Click
+2026-01-16 02:26:28,499 — INFO — Left Wink Click
+2026-01-16 02:26:28,760 — INFO — Left Wink Click
+2026-01-16 02:26:29,087 — INFO — Left Wink Click
+2026-01-16 02:26:29,863 — INFO — Left Wink Click
+2026-01-16 02:26:30,957 — INFO — Right Wink Right Click
+2026-01-16 02:26:31,985 — INFO — Right Wink Right Click
+2026-01-16 02:26:32,300 — INFO — Right Wink Right Click
+2026-01-16 02:26:32,600 — INFO — Right Wink Right Click
+2026-01-16 02:26:32,900 — INFO — Right Wink Right Click
+2026-01-16 02:26:33,519 — INFO — Left Wink Click
+2026-01-16 02:26:33,824 — INFO — Left Wink Click
+2026-01-16 02:26:34,146 — INFO — Left Wink Click
+2026-01-16 02:26:34,416 — INFO — Left Wink Click
+2026-01-16 02:26:34,701 — INFO — Left Wink Click
+2026-01-16 02:26:34,971 — INFO — Left Wink Click
+2026-01-16 02:26:35,368 — INFO — Left Wink Click
+2026-01-16 02:26:37,539 — INFO — Left Wink Click
+2026-01-16 02:26:38,630 — INFO — Left Wink Click
+2026-01-16 02:26:38,943 — INFO — Left Wink Click
+2026-01-16 02:26:40,359 — INFO — Right Wink Right Click
+2026-01-16 02:26:40,657 — INFO — Right Wink Right Click
+2026-01-16 02:26:40,957 — INFO — Right Wink Right Click
+2026-01-16 02:26:41,257 — INFO — Right Wink Right Click
+2026-01-16 02:26:41,576 — INFO — Right Wink Right Click
+2026-01-16 02:26:41,940 — INFO — Right Wink Right Click
+2026-01-16 02:26:44,154 — INFO — Left Wink Click
+2026-01-16 02:26:45,707 — INFO — Right Wink Right Click
+2026-01-16 02:26:50,316 — INFO — Right Wink Right Click
+2026-01-16 02:26:55,128 — INFO — Left Wink Click
+2026-01-16 02:26:55,413 — INFO — Right Wink Right Click
+2026-01-16 02:26:56,810 — INFO — Right Wink Right Click
+2026-01-16 02:27:00,273 — INFO — Right Wink Right Click
+2026-01-16 02:27:01,777 — INFO — Right Wink Right Click
+2026-01-16 02:27:03,687 — INFO — Left Wink Click
+2026-01-16 02:27:04,122 — INFO — Left Wink Click
+2026-01-16 02:27:05,969 — INFO — Left Wink Click
+2026-01-16 02:27:06,325 — INFO — Left Wink Click
+2026-01-16 02:27:06,798 — INFO — Left Wink Click
+2026-01-16 02:27:09,079 — INFO — Left Wink Click
+2026-01-16 02:27:09,555 — INFO — Right Wink Right Click
+2026-01-16 02:27:09,867 — INFO — Left Wink Click
+2026-01-16 02:27:10,331 — INFO — Left Wink Click
+2026-01-16 02:27:11,243 — INFO — Right Wink Right Click
+2026-01-16 02:27:11,680 — INFO — Right Wink Right Click
+2026-01-16 02:27:12,296 — INFO — Right Wink Right Click
+2026-01-16 02:27:14,462 — INFO — Right Wink Right Click
+2026-01-16 02:27:15,228 — INFO — Right Wink Right Click
+2026-01-16 02:27:19,473 — INFO — Right Wink Right Click
+2026-01-16 02:27:20,819 — INFO — Left Wink Click
+2026-01-16 02:27:21,119 — INFO — Right Wink Right Click
+2026-01-16 02:27:21,461 — INFO — Right Wink Right Click
+2026-01-16 02:27:21,747 — INFO — Right Wink Right Click
+2026-01-16 02:27:22,090 — INFO — Right Wink Right Click
+2026-01-16 02:27:22,427 — INFO — Right Wink Right Click
+2026-01-16 02:27:22,730 — INFO — Right Wink Right Click
+2026-01-16 02:27:31,787 — INFO — Right Wink Right Click
+2026-01-16 02:27:39,306 — INFO — Right Wink Right Click
+2026-01-16 02:27:39,936 — INFO — Left Wink Click
+2026-01-16 02:27:47,035 — INFO — Right Wink Right Click
+2026-01-16 02:27:50,084 — INFO — Right Wink Right Click
+2026-01-16 02:48:53,233 — INFO — Paused=True
+2026-01-16 02:48:54,005 — INFO — Paused=False
+2026-01-16 02:49:09,838 — INFO — Paused=True
+2026-01-16 02:49:11,425 — INFO — Paused=False
+2026-01-16 02:49:14,903 — INFO — Mode switched to PEN
+2026-01-16 02:49:57,098 — INFO — Paused=True
+2026-01-16 02:50:03,158 — INFO — Paused=False
+2026-01-16 02:50:08,656 — INFO — Paused=True
+2026-01-16 02:50:18,088 — INFO — Paused=False
+2026-01-16 02:50:20,937 — INFO — Mode switched to HAND
+2026-01-16 02:50:29,904 — INFO — Mode switched to PEN
+2026-01-16 02:50:41,336 — INFO — Mode switched to HAND
+2026-01-16 02:51:10,815 — INFO — Mode switched to PEN
+2026-01-16 02:51:23,421 — INFO — Paused=True
+2026-01-16 02:51:24,747 — INFO — Paused=False
+2026-01-16 02:51:25,985 — INFO — Paused=True
+2026-01-16 02:51:32,724 — INFO — Paused=False
+2026-01-16 02:51:43,948 — INFO — Mode switched to EYE
+2026-01-16 02:52:01,215 — INFO — Paused=True
+2026-01-16 02:52:07,517 — INFO — Paused=False
+2026-01-16 02:52:59,050 — INFO — Paused=True
+2026-01-16 02:53:03,734 — INFO — Paused=False
+2026-01-16 02:53:26,466 — INFO — Paused=True
+2026-01-16 02:53:31,862 — INFO — Paused=False
+2026-01-16 02:54:00,489 — INFO — Mode switched to HAND
+2026-01-16 02:54:11,508 — INFO — Paused=True
+2026-01-16 02:54:21,123 — INFO — Paused=False
+2026-01-16 02:54:21,809 — INFO — Paused=True
+2026-01-16 02:54:59,023 — INFO — Paused=False
+2026-01-16 02:55:03,389 — INFO — Paused=True
+2026-01-16 02:55:05,572 — INFO — Paused=False
+2026-01-16 02:55:06,191 — INFO — Paused=True
+2026-01-16 02:55:06,885 — INFO — Paused=False
+2026-01-16 02:55:28,498 — INFO — Paused=True
+2026-01-16 02:55:29,224 — INFO — Paused=False
+2026-01-16 02:55:44,991 — INFO — Paused=True
+2026-01-16 02:55:46,689 — INFO — Paused=False
+2026-01-16 02:55:51,051 — INFO — Paused=True
+2026-01-16 02:55:54,716 — INFO — Paused=False
+2026-01-16 02:56:00,774 — INFO — Paused=True
+2026-01-16 02:56:16,677 — INFO — Paused=False
+2026-01-16 02:56:22,626 — INFO — Paused=True
+2026-01-16 02:56:37,176 — INFO — Paused=False
+2026-01-16 02:56:45,878 — INFO — Paused=True
+2026-01-16 02:56:51,395 — INFO — Paused=False
+2026-01-16 02:57:04,560 — INFO — Paused=True
+2026-01-16 02:57:10,536 — INFO — Paused=False
+2026-01-16 02:57:20,930 — INFO — Paused=True
+2026-01-16 02:57:21,594 — INFO — Paused=False
+2026-01-16 02:57:22,217 — INFO — Paused=True
+2026-01-16 02:57:23,390 — INFO — Paused=False
+2026-01-16 02:57:24,020 — INFO — Paused=True
+2026-01-16 02:57:25,757 — INFO — Paused=False
+2026-01-16 02:57:26,799 — INFO — Paused=True
+2026-01-16 02:57:27,417 — INFO — Paused=False
+2026-01-16 02:57:28,097 — INFO — Paused=True
+2026-01-16 02:57:28,750 — INFO — Paused=False
+2026-01-16 02:57:29,364 — INFO — Paused=True
+2026-01-16 02:57:31,111 — INFO — Paused=False
+2026-01-16 02:57:31,763 — INFO — Paused=True
+2026-01-16 02:57:39,723 — INFO — Paused=False
+2026-01-16 02:57:43,796 — INFO — Paused=True
+2026-01-16 02:57:48,472 — INFO — Paused=False
+2026-01-16 02:58:03,458 — INFO — Paused=True
+2026-01-16 02:58:06,957 — INFO — Paused=False
+2026-01-16 02:58:26,395 — INFO — Paused=True
+2026-01-16 02:58:34,028 — INFO — Paused=False
+2026-01-16 02:58:36,956 — INFO — Paused=True
+2026-01-16 02:58:40,454 — INFO — Paused=False
+2026-01-16 02:58:41,104 — INFO — Paused=True
+2026-01-16 02:58:41,713 — INFO — Paused=False
+2026-01-16 02:58:42,316 — INFO — Paused=True
+2026-01-16 03:51:32,411 — INFO — Paused=True
+2026-01-16 03:51:33,820 — INFO — Paused=False
+2026-01-16 03:51:40,156 — INFO — Paused=True
+2026-01-16 03:51:40,773 — INFO — Paused=False
+2026-01-16 03:51:44,219 — INFO — Paused=True
+2026-01-16 03:51:53,156 — INFO — Paused=False
+2026-01-16 03:51:54,378 — INFO — Paused=True
+2026-01-16 03:51:56,079 — INFO — Paused=False
+2026-01-16 03:51:57,124 — INFO — Paused=True
+2026-01-16 03:51:58,186 — INFO — Paused=False
+2026-01-16 03:52:02,063 — INFO — Paused=True
+2026-01-16 03:52:06,345 — INFO — Paused=False
+2026-01-16 03:52:07,429 — INFO — Paused=True
+2026-01-16 03:52:09,461 — INFO — Paused=False
+2026-01-16 03:52:25,412 — INFO — Paused=True
+2026-01-16 03:52:28,012 — INFO — Paused=False
+2026-01-16 03:52:51,165 — INFO — Mode switched to PEN
+2026-01-16 03:53:33,103 — INFO — Paused=True
+2026-01-16 03:53:41,719 — INFO — Paused=False
+2026-01-16 03:53:50,728 — INFO — Mode switched to EYE
+2026-01-16 03:54:06,732 — INFO — Paused=True
+2026-01-16 03:54:07,335 — INFO — Paused=False
+2026-01-16 03:54:12,432 — INFO — Paused=True
+2026-01-16 03:54:13,888 — INFO — Paused=False
+2026-01-16 03:54:16,203 — INFO — Paused=True
+2026-01-16 03:54:20,294 — INFO — Paused=False
+2026-01-16 03:54:29,226 — INFO — Paused=True
+2026-01-16 03:54:45,053 — INFO — Paused=False
+2026-01-16 03:54:46,537 — INFO — Paused=True
+2026-01-16 03:57:27,088 — INFO — generated new fontManager
+2026-01-16 03:57:27,131 — INFO — generated new fontManager
+2026-01-16 04:15:11,573 — INFO — generated new fontManager
+2026-01-16 04:27:57,342 — INFO — Paused=True
+2026-01-16 04:27:58,977 — INFO — Paused=False
+2026-01-16 04:28:07,713 — INFO — Paused=True
+2026-01-16 04:28:15,230 — INFO — Paused=False
+2026-01-16 04:28:15,967 — INFO — Paused=True
+2026-01-16 04:28:17,951 — INFO — Paused=False
+2026-01-16 04:28:22,587 — INFO — Mode switched to PEN
+2026-01-16 04:29:36,713 — INFO — Paused=True
+2026-01-16 04:29:37,475 — INFO — Paused=False
+2026-01-16 04:29:42,981 — INFO — Mode switched to HAND
+2026-01-16 04:29:51,994 — INFO — Mode switched to PEN
+2026-01-16 04:30:47,361 — INFO — Paused=True
+2026-01-16 04:30:48,173 — INFO — Paused=False
+2026-01-16 04:30:49,999 — INFO — Paused=True
+2026-01-16 04:30:51,257 — INFO — Paused=False
+2026-01-16 04:30:52,437 — INFO — Paused=True
+2026-01-16 04:30:57,931 — INFO — Paused=False
+2026-01-16 04:30:59,019 — INFO — Paused=True
+2026-01-16 04:30:59,735 — INFO — Paused=False
+2026-01-16 04:31:22,210 — INFO — Paused=True
+2026-01-16 04:31:23,931 — INFO — Paused=False
+2026-01-16 04:31:57,338 — INFO — Paused=True
+2026-01-16 04:31:59,077 — INFO — Paused=False
+2026-01-16 04:32:03,611 — INFO — Paused=True
+2026-01-16 04:32:06,212 — INFO — Paused=False
+2026-01-16 04:32:08,651 — INFO — Paused=True
+2026-01-16 04:32:09,279 — INFO — Paused=False
+2026-01-16 04:32:11,482 — INFO — Paused=True
+2026-01-16 04:32:30,320 — INFO — Paused=False
+2026-01-16 04:32:38,085 — INFO — Paused=True
+2026-01-16 04:32:43,774 — INFO — Paused=False
+2026-01-16 04:32:44,606 — INFO — Paused=True
+2026-01-16 04:32:45,216 — INFO — Paused=False

@@ -1,9 +1,9 @@
 import cv2
-import mediapipe as mp
-import time
 from src.vision.face_gestures import detect_face_gesture
 
 cap = cv2.VideoCapture(0)
+
+print("Running face debug tool...")
 
 while True:
     ret, frame = cap.read()
@@ -13,7 +13,7 @@ while True:
     gesture = detect_face_gesture(frame)
 
     if gesture:
-        print("Gesture =", gesture)
+        print("Detected:", gesture)
 
     cv2.imshow("Face Debug", frame)
 

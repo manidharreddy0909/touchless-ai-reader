@@ -1,12 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.utils.hooks import collect_data_files
+
+datas = [('venv\\Lib\\site-packages\\mediapipe', 'mediapipe'), ('venv\\Lib\\site-packages\\mediapipe\\modules', 'mediapipe\\modules')]
+datas += collect_data_files('mediapipe')
 
 
 a = Analysis(
     ['app.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=datas,
+    hiddenimports=['mediapipe', 'mediapipe.python', 'mediapipe.python.solutions', 'mediapipe.python.solutions.hands', 'mediapipe.python.solutions.face_mesh'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -22,7 +26,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='app',
+    name='TouchlessAIReader',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

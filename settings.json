@@ -1,6 +1,9 @@
 {
-    "hud": true,
-    "sounds": true,
-    "gesture_stability": 5,
-    "mode": "HAND"
+  "hud": true,
+  "sounds": true,
+  "gesture_stability": 5,
+  "mode": "HAND",
+  "enable_hand": true,
+  "enable_face": true,
+  "enable_eye": true
 }
