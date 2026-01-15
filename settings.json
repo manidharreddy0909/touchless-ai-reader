@@ -1,0 +1,6 @@
+{
+    "hud": true,
+    "sounds": true,
+    "gesture_stability": 5,
+    "mode": "HAND"
+}
