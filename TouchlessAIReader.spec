@@ -3,6 +3,7 @@ from PyInstaller.utils.hooks import collect_data_files
 
 datas = [('venv\\Lib\\site-packages\\mediapipe', 'mediapipe'), ('venv\\Lib\\site-packages\\mediapipe\\modules', 'mediapipe\\modules')]
 datas += collect_data_files('mediapipe')
+datas += [('gesture_model.pkl', 'gesture_model.pkl')]
 
 
 a = Analysis(

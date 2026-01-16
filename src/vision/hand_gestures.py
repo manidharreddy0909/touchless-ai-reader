@@ -1,7 +1,22 @@
+
 import joblib
 import numpy as np
+import sys
+import os
+import shutil
+import tempfile
 
-model = joblib.load("gesture_model.pkl")
+def get_model_path():
+    if hasattr(sys, '_MEIPASS'):
+        src = os.path.join(sys._MEIPASS, 'gesture_model.pkl')
+        # Copy to a temp file to avoid permission issues
+        tmp = tempfile.NamedTemporaryFile(delete=False, suffix='.pkl')
+        shutil.copyfile(src, tmp.name)
+        tmp.close()
+        return tmp.name
+    return os.path.join(os.path.dirname(__file__), '../../..', 'gesture_model.pkl')
+
+model = joblib.load(get_model_path())
 
 LABELS = {
     0: "GESTURE_0",
