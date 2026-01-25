@@ -1,32 +1,22 @@
+def classify(features):
+    thumb_index = features["thumb_index"]
+    index_middle = features["index_middle"]
+    palm_size = features["palm_size"]
 
-import joblib
-import numpy as np
-import sys
-import os
-import shutil
-import tempfile
+    # Pinch (Click)
+    if thumb_index < palm_size * 0.35:
+        return "PINCH"
 
-def get_model_path():
-    if hasattr(sys, '_MEIPASS'):
-        src = os.path.join(sys._MEIPASS, 'gesture_model.pkl')
-        # Copy to a temp file to avoid permission issues
-        tmp = tempfile.NamedTemporaryFile(delete=False, suffix='.pkl')
-        shutil.copyfile(src, tmp.name)
-        tmp.close()
-        return tmp.name
-    return os.path.join(os.path.dirname(__file__), '../../..', 'gesture_model.pkl')
+    # Two fingers (Scroll)
+    if index_middle > palm_size * 0.6:
+        return "TWO_FINGERS"
 
-model = joblib.load(get_model_path())
+    # Open palm (Resume)
+    if thumb_index > palm_size * 0.8 and index_middle > palm_size * 0.8:
+        return "PALM"
 
-LABELS = {
-    0: "GESTURE_0",
-    1: "GESTURE_1",
-    2: "GESTURE_2",
-    3: "GESTURE_3",
-    4: "GESTURE_4"
-}
+    # Fist (Pause)
+    if thumb_index < palm_size * 0.4 and index_middle < palm_size * 0.4:
+        return "FIST"
 
-def classify_gesture(features):
-    x = np.array(features).reshape(1, -1)
-    pred = model.predict(x)[0]
-    return LABELS[pred]
+    return "INDEX"

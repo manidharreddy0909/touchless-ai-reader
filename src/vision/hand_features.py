@@ -1,45 +1,55 @@
-import numpy as np
 import math
 
-def euclidean(p1, p2):
-    return math.sqrt((p1.x - p2.x)**2 +
-                     (p1.y - p2.y)**2 +
-                     (p1.z - p2.z)**2)
+def dist(a, b):
+    return math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2)
 
-def angle(a, b, c):
-    """Angle at point b formed by points a-b-c"""
-    ba = np.array([a.x - b.x, a.y - b.y, a.z - b.z])
-    bc = np.array([c.x - b.x, c.y - b.y, c.z - b.z])
+def finger_up(lm, tip, pip):
+    return lm[tip].y < lm[pip].y
 
-    cosine = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc) + 1e-6)
-    return np.degrees(np.arccos(np.clip(cosine, -1.0, 1.0)))
-def extract_distances(landmarks):
-    wrist = landmarks[0]
+def extract_hand_state(hand):
+    lm = hand.landmark
 
-    fingertips = [4, 8, 12, 16, 20]
-    features = []
+    index = finger_up(lm, 8, 6)
+    middle = finger_up(lm, 12, 10)
+    ring = finger_up(lm, 16, 14)
+    pinky = finger_up(lm, 20, 18)
 
-    for idx in fingertips:
-        features.append(euclidean(wrist, landmarks[idx]))
+    pinch = dist(lm[4], lm[8]) < 0.045
 
-    return features
-def extract_angles(landmarks):
-    finger_joints = {
-        "index": (5,6,8),
-        "middle":(9,10,12),
-        "ring":(13,14,16),
-        "pinky":(17,18,20)
-
+    return {
+        "index": index,
+        "middle": middle,
+        "ring": ring,
+        "pinky": pinky,
+        "pinch": pinch
     }
 
-    features = []
-    for _, (a,b,c) in finger_joints.items():
-        features.append(angle(landmarks[a],landmarks[b],landmarks[c]))
-    return features
-def extract_hand_features(hand_landmarks):
-    landmarks = hand_landmarks.landmark
+def is_index_only(s):
+    return s["index"] and not (s["middle"] or s["ring"] or s["pinky"])
 
-    distance_features = extract_distances(landmarks)
-    angle_features = extract_angles(landmarks)
+def is_two_finger(s):
+    return s["index"] and s["middle"] and not s["ring"]
 
-    return distance_features + angle_features
+def is_palm(s):
+    return s["index"] and s["middle"] and s["ring"] and s["pinky"]
+
+def is_fist(s):
+    return not (s["index"] or s["middle"] or s["ring"] or s["pinky"])
+
+def is_three_finger(state):
+    return (
+        state["index"] and
+        state["middle"] and
+        state["ring"] and
+        not state["pinky"]
+    )
+def is_four_finger(state):
+    return (
+        state["index"] and
+        state["middle"] and
+        state["ring"] and
+        state["pinky"]
+    )
+
+def is_thumb_index_pinch(state):
+    return state["pinch"] and state["thumb"]

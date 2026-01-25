@@ -1,37 +1,43 @@
-import cv2
-import mediapipe as mp
 import pyautogui
 import numpy as np
 
-mp_face = mp.solutions.face_mesh
-face = mp_face.FaceMesh(refine_landmarks=True)
+pyautogui.FAILSAFE = False
 
-LEFT_IRIS = [468]
-RIGHT_IRIS = [473]
+prev_x = None
+prev_y = None
+SMOOTHING = 0.25
 
-SCREEN_W, SCREEN_H = pyautogui.size()
+LEFT_IRIS = [474, 475, 476, 477]
+RIGHT_IRIS = [469, 470, 471, 472]
 
-last_x, last_y = SCREEN_W//2, SCREEN_H//2
-SMOOTHING = 0.2
 
-def eye_controlled_mouse(frame):
-    global last_x, last_y
+def iris_center(face, idxs, w, h):
+    xs = [face.landmark[i].x * w for i in idxs]
+    ys = [face.landmark[i].y * h for i in idxs]
+    return np.mean(xs), np.mean(ys)
 
-    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    results = face.process(rgb)
-    if not results.multi_face_landmarks:
-        return
+
+def move_mouse_by_eye(face, frame):
+    global prev_x, prev_y
 
     h, w, _ = frame.shape
-    pts = results.multi_face_landmarks[0].landmark
+    sx, sy = pyautogui.size()
 
-    lx = int(pts[LEFT_IRIS[0]].x * w)
-    ly = int(pts[LEFT_IRIS[0]].y * h)
+    lx, ly = iris_center(face, LEFT_IRIS, w, h)
+    rx, ry = iris_center(face, RIGHT_IRIS, w, h)
 
-    x = np.interp(lx, [0, w], [0, SCREEN_W])
-    y = np.interp(ly, [0, h], [0, SCREEN_H])
+    cx = (lx + rx) / 2
+    cy = (ly + ry) / 2
 
-    last_x = last_x + (x - last_x) * SMOOTHING
-    last_y = last_y + (y - last_y) * SMOOTHING
+    mx = np.interp(cx, [w * 0.3, w * 0.7], [0, sx])
+    my = np.interp(cy, [h * 0.3, h * 0.7], [0, sy])
 
-    pyautogui.moveTo(last_x, last_y)
+    if prev_x is None:
+        prev_x, prev_y = mx, my
+
+    mx = prev_x + (mx - prev_x) * SMOOTHING
+    my = prev_y + (my - prev_y) * SMOOTHING
+
+    pyautogui.moveTo(mx, my)
+
+    prev_x, prev_y = mx, my

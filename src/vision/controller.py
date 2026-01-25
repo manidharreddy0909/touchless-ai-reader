@@ -2,212 +2,207 @@ import cv2
 import time
 import pyautogui
 
-from src.ui.settings_window import open_settings_window
+# ================= HAND =================
+from src.vision.hand_landmarks import HandLandmarkDetector
+from src.vision.hand_features import (
+    extract_hand_state,
+    is_palm,
+    is_fist,
+    is_three_finger
+)
+from src.vision.mouse_actions import (
+    move_mouse,
+    pinch_control,
+    scroll,
+    toggle_pause,
+    paused
+)
 
-from collections import deque
+# ================= FACE / EYE =================
+from src.vision.face_tracker import FaceTracker
+from src.vision.eye_gestures import (
+    detect_eye_gesture,
+    detect_eye_cursor
+)
+from src.vision.face_gestures import detect_face_zoom
 
-from src.settings import load_settings
-from src.logger import log
+# ================= PEN =================
+from src.vision.pen_mouse import (
+    pen_down,
+    pen_up,
+    draw_point,
+    overlay
+)
 
-from src.vision.hand_tracker import detect_hand
-from src.vision.hand_features import extract_hand_features
-from src.vision.hand_gestures import classify_gesture
-from src.vision.face_gestures import detect_face_gesture
-from src.vision.eye_mouse import eye_controlled_mouse
-from src.vision.pen_mouse import pen_mouse_control
+# ================= GLOBAL =================
+MODE = "HAND"
+last_switch = 0
+COOLDOWN = 1.2
 
-settings = load_settings()
-
-MODE = settings["mode"]
-ACTION_DELAY = 0.35
-PAGE_DELAY = 1.0
-
-paused = False
-drag_state = False
-last_action_time = 0
-last_page_time = 0
-
-gesture_history = deque(maxlen=8)
-MIN_STABLE_FRAMES = settings["gesture_stability"]
-
-mode_hold_start = 0
-mode_hold_gesture = None
-MODE_HOLD_TIME = 2.0
+prev_scroll_y = None
+last_scroll_time = 0
+SCROLL_COOLDOWN = 0.12
 
 
-def do_action(action):
-    global drag_state, last_action_time
-    now = time.time()
-    if now - last_action_time < ACTION_DELAY:
-        return
-    last_action_time = now
+def perform_face_action(action):
+    """Executes eye / face actions"""
+    if action == "LEFT_WINK":
+        pyautogui.click(button="left")
 
-    if action == "SCROLL_UP":
-        pyautogui.scroll(300)
-    elif action == "SCROLL_DOWN":
-        pyautogui.scroll(-300)
+    elif action == "RIGHT_WINK":
+        pyautogui.click(button="right")
+
+    elif action == "BLINK_TOGGLE":
+        toggle_pause(not paused)
+
     elif action == "ZOOM_IN":
-        pyautogui.keyDown("ctrl")
-        pyautogui.scroll(300)
-        pyautogui.keyUp("ctrl")
+        pyautogui.hotkey("ctrl", "+")
+
     elif action == "ZOOM_OUT":
-        pyautogui.keyDown("ctrl")
-        pyautogui.scroll(-300)
-        pyautogui.keyUp("ctrl")
-    elif action == "DRAG":
-        if not drag_state:
-            pyautogui.mouseDown()
-            drag_state = True
-        else:
-            pyautogui.mouseUp()
-            drag_state = False
-
-
-def draw_hud(frame, gesture, paused):
-    if not settings["hud"]:
-        return
-
-    overlay = frame.copy()
-    cv2.rectangle(overlay, (10, 10), (430, 220), (20, 20, 20), -1)
-    frame[:] = cv2.addWeighted(overlay, 0.6, frame, 0.4, 0)
-
-    cv2.putText(frame, f"Mode: {MODE}", (25, 60),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
-
-    cv2.putText(frame, f"Gesture: {gesture}", (25, 110),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
-
-    cv2.putText(frame, "Paused" if paused else "Active", (25, 160),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.8,
-                (0, 0, 255) if paused else (0, 255, 0), 2)
-
-
-def set_mode(new_mode):
-    global MODE
-    if MODE != new_mode:
-        MODE = new_mode
-        log(f"Mode switched to {MODE}")
-        print("Mode:", MODE)
-
-
-def handle_hand_actions(gesture):
-    if gesture == "GESTURE_0":
-        do_action("SCROLL_UP")
-    elif gesture == "GESTURE_1":
-        do_action("SCROLL_DOWN")
-    elif gesture == "GESTURE_2":
-        do_action("DRAG")
-    elif gesture == "GESTURE_3":
-        do_action("ZOOM_IN")
-    elif gesture == "GESTURE_4":
-        do_action("ZOOM_OUT")
+        pyautogui.hotkey("ctrl", "-")
 
 
 def run_controller():
-    global paused, last_page_time, mode_hold_start, mode_hold_gesture
+    global MODE, last_switch
+    global prev_scroll_y, last_scroll_time
 
     cap = cv2.VideoCapture(0)
 
-    head_up = {"start": None, "cooldown": 0}
-    head_down = {"start": None, "cooldown": 0}
+    hand_detector = HandLandmarkDetector()
+    face_tracker = FaceTracker()
 
-    HOLD_TIME = 1.4
-    COOLDOWN = 4.0
+    screen_w, screen_h = pyautogui.size()
+
+    print("🟢 Touchless AI Controller Started")
+    print("HAND | FACE | PEN MODES ACTIVE")
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
 
-        now = time.time()
+        # ======================================================
+        # ======================= HAND MODE ===================
+        # ======================================================
+        if MODE == "HAND":
+            result = hand_detector.detect(frame)
 
-        if cv2.waitKey(1) & 0xFF == ord("s"):
-            paused = True
-            cap.release()
-            cv2.destroyAllWindows()
-            open_settings_window()
-            settings.update(load_settings())
-            paused = False
-            cap = cv2.VideoCapture(0)
+            if result.multi_hand_landmarks:
+                hand = result.multi_hand_landmarks[0]
+                hand_detector.draw(frame, hand)
 
-        # ---------- FACE GESTURES ----------
-        face = detect_face_gesture(frame) if settings["enable_face"] else None
+                state = extract_hand_state(hand)
+                lm = hand.landmark
 
-        if face == "BLINK":
-            paused = not paused
-            log(f"Paused={paused}")
+                # -------- MODE SWITCH --------
+                if is_palm(state) and time.time() - last_switch > COOLDOWN:
+                    MODE = "FACE"
+                    last_switch = time.time()
+                    prev_scroll_y = None
 
-        elif face == "LEFT_WINK" and not paused:
-            pyautogui.click(button="left")
+                elif is_three_finger(state) and time.time() - last_switch > COOLDOWN:
+                    MODE = "PEN"
+                    last_switch = time.time()
+                    prev_scroll_y = None
 
-        elif face == "RIGHT_WINK" and not paused:
-            pyautogui.click(button="right")
+                # -------- ACTIVE CONTROL --------
+                if not paused:
+                    # Mouse Move (Index only)
+                    if state["index"] and not state["middle"]:
+                        move_mouse(lm[8].x, lm[8].y)
 
-        elif face == "HEAD_LEFT" and now - last_page_time > PAGE_DELAY:
-            pyautogui.hotkey("ctrl", "left")
-            last_page_time = now
+                    # Pinch → Drag / Select
+                    pinch_control(state["pinch"])
 
-        elif face == "HEAD_RIGHT" and now - last_page_time > PAGE_DELAY:
-            pyautogui.hotkey("ctrl", "right")
-            last_page_time = now
+                    # Scroll (Two finger, delta-based)
+                    if state["index"] and state["middle"]:
+                        current_y = lm[8].y
 
-        if face == "HEAD_UP":
-            if head_up["start"] is None:
-                head_up["start"] = now
-            elif now - head_up["start"] > HOLD_TIME and now > head_up["cooldown"]:
-                pyautogui.hotkey("win", "ctrl", "o")
-                head_up["cooldown"] = now + COOLDOWN
-                head_up["start"] = None
-        else:
-            head_up["start"] = None
+                        if prev_scroll_y is not None:
+                            dy = current_y - prev_scroll_y
+                            now = time.time()
 
-        if face == "HEAD_DOWN":
-            if head_down["start"] is None:
-                head_down["start"] = now
-            elif now - head_down["start"] > HOLD_TIME and now > head_down["cooldown"]:
-                pyautogui.hotkey("alt", "f4")
-                head_down["cooldown"] = now + COOLDOWN
-                head_down["start"] = None
-        else:
-            head_down["start"] = None
+                            if abs(dy) > 0.01 and now - last_scroll_time > SCROLL_COOLDOWN:
+                                scroll(-60 if dy > 0 else 60)
+                                last_scroll_time = now
 
-        # ---------- HAND GESTURES ----------
-        hand = detect_hand(frame) if settings["enable_hand"] else None
-        current_gesture = None
+                        prev_scroll_y = current_y
+                    else:
+                        prev_scroll_y = None
 
-        if hand and not paused:
-            features = extract_hand_features(hand)
-            g = classify_gesture(features)
+        # ======================================================
+        # ======================= FACE MODE ===================
+        # ======================================================
+        elif MODE == "FACE":
+            face_result = face_tracker.detect(frame)
 
-            gesture_history.append(g)
+            if face_result.multi_face_landmarks:
+                face = face_result.multi_face_landmarks[0]
 
-            if gesture_history.count(g) >= MIN_STABLE_FRAMES:
-                current_gesture = g
-                handle_hand_actions(g)
+                # 👁 Eye cursor movement
+                ex, ey = detect_eye_cursor(face, frame.shape)
+                pyautogui.moveTo(
+                    int(ex * screen_w),
+                    int(ey * screen_h),
+                    duration=0.05
+                )
 
-                if g in ["GESTURE_0", "GESTURE_1", "GESTURE_3"]:
-                    if mode_hold_gesture != g:
-                        mode_hold_gesture = g
-                        mode_hold_start = now
-                    elif now - mode_hold_start > MODE_HOLD_TIME:
-                        if g == "GESTURE_0":
-                            set_mode("HAND")
-                        elif g == "GESTURE_1":
-                            set_mode("PEN")
-                        elif g == "GESTURE_3":
-                            set_mode("EYE")
-                        mode_hold_gesture = None
+                # Eye gestures
+                eye_action = detect_eye_gesture(face, frame)
+                if eye_action:
+                    perform_face_action(eye_action)
+
+                # Head zoom
+                zoom_action = detect_face_zoom(face)
+                if zoom_action:
+                    perform_face_action(zoom_action)
+
+            # -------- Return to HAND --------
+            hand_result = hand_detector.detect(frame)
+            if hand_result.multi_hand_landmarks:
+                state = extract_hand_state(hand_result.multi_hand_landmarks[0])
+                if is_fist(state) and time.time() - last_switch > COOLDOWN:
+                    MODE = "HAND"
+                    last_switch = time.time()
+
+        # ======================================================
+        # ======================= PEN MODE ====================
+        # ======================================================
+        elif MODE == "PEN":
+            result = hand_detector.detect(frame)
+
+            if result.multi_hand_landmarks:
+                hand = result.multi_hand_landmarks[0]
+                hand_detector.draw(frame, hand)
+
+                state = extract_hand_state(hand)
+                lm = hand.landmark
+
+                # Exit pen mode
+                if is_palm(state) and time.time() - last_switch > COOLDOWN:
+                    MODE = "HAND"
+                    last_switch = time.time()
+
+                # Drawing logic
+                if state["pinch"]:
+                    pen_down()
                 else:
-                    mode_hold_gesture = None
+                    pen_up()
 
-                if MODE == "PEN":
-                    pen_mouse_control(hand, frame)
+                draw_point(lm[8].x, lm[8].y, frame)
 
-        # ---------- EYE CONTROL ----------
-        if settings["enable_eye"] and MODE == "EYE" and not paused:
-            eye_controlled_mouse(frame)
+            frame = overlay(frame)
 
-        draw_hud(frame, current_gesture, paused)
+        # ================= UI =================
+        cv2.putText(
+            frame,
+            f"MODE: {MODE}",
+            (20, 40),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1,
+            (0, 255, 0),
+            2
+        )
 
         cv2.imshow("Touchless AI Reader", frame)
         if cv2.waitKey(1) & 0xFF == 27:
@@ -215,7 +210,3 @@ def run_controller():
 
     cap.release()
     cv2.destroyAllWindows()
-
-
-if __name__ == "__main__":
-    run_controller()

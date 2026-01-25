@@ -1,22 +1,45 @@
-import pyautogui
+import cv2
 import numpy as np
 
-SCREEN_W, SCREEN_H = pyautogui.size()
+drawing = False
+canvas = None
+prev_point = None
 
-last_x, last_y = SCREEN_W//2, SCREEN_H//2
-SMOOTHING = 0.15
 
-def pen_mouse_control(landmarks, frame):
-    global last_x, last_y
+def init_canvas(frame):
+    global canvas
+    h, w, _ = frame.shape
+    canvas = np.zeros((h, w, 3), dtype=np.uint8)
+
+
+def pen_down():
+    global drawing
+    drawing = True
+
+
+def pen_up():
+    global drawing, prev_point
+    drawing = False
+    prev_point = None
+
+
+def draw_point(x, y, frame):
+    global prev_point, canvas
+
+    if canvas is None:
+        init_canvas(frame)
 
     h, w, _ = frame.shape
+    px = int(x * w)
+    py = int(y * h)
 
-    index = landmarks.landmark[8]
+    if drawing:
+        if prev_point is not None:
+            cv2.line(canvas, prev_point, (px, py), (0, 255, 0), 3)
+        prev_point = (px, py)
 
-    x = np.interp(index.x * w, [0, w], [0, SCREEN_W])
-    y = np.interp(index.y * h, [0, h], [0, SCREEN_H])
 
-    last_x = last_x + (x - last_x) * SMOOTHING
-    last_y = last_y + (y - last_y) * SMOOTHING
-
-    pyautogui.moveTo(last_x, last_y)
+def overlay(frame):
+    if canvas is None:
+        return frame
+    return cv2.addWeighted(frame, 1.0, canvas, 1.0, 0)
