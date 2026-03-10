@@ -2,42 +2,43 @@
 
 ---
 
-Touchless AI Reader
+# Touchless AI Reader
+
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: Educational](https://img.shields.io/badge/License-Educational-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/manidharreddy0909/touchless-ai-reader?style=social)](https://github.com/manidharreddy0909/touchless-ai-reader)
 
 Touchless AI Reader is a multimodal Human–Computer Interaction system that enables touch-free computer control using hand gestures, eye gestures, face movement, and a virtual pen.
 
 The system is designed for smooth, stable, and safe interaction, focusing on accessibility, hygiene, and futuristic user experience.
 
+---
+
+## Table of Contents
+- [Key Features](#key-features)
+- [Getting Started](#installation--running)
+- [Gesture Mapping](#gesture-mapping)
+- [Development Timeline](#development-timeline--progress)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ---
 
-Key Features
+## Key Features
 
-Real-time hand gesture based mouse control
-
-Smooth cursor movement using index finger
-
-Pinch gesture for click, drag, and selection
-
-Two-finger scrolling (up & down with motion-based logic)
-
-Pause & resume controls using palm and fist
-
-Face gesture integration (zoom in / zoom out)
-
-Eye gesture interaction (blink, left wink, right wink)
-
-Mode switching: Hand Mode, Face Mode, Pen Mode
-
-Virtual air-pen drawing with pinch
-
-Gesture smoothing & cooldown logic
-
-Safe interaction (anti-flicker, action gating)
-
-HUD overlay showing current mode
-
-Designed for accessibility and hands-free use
+- Real-time hand gesture based mouse control
+- Smooth cursor movement using index finger
+- Pinch gesture for click, drag, and selection
+- Two-finger scrolling (up & down with motion-based logic)
+- Pause & resume controls using palm and fist
+- Face gesture integration (zoom in / zoom out)
+- Eye gesture interaction (blink, left wink, right wink)
+- Mode switching: Hand Mode, Face Mode, Pen Mode
+- Virtual air-pen drawing with pinch
+- Gesture smoothing & cooldown logic
+- Safe interaction (anti-flicker, action gating)
+- HUD overlay showing current mode
+- Designed for accessibility and hands-free use
 
 
 
@@ -252,43 +253,39 @@ Reliable mode isolation
 
 ---
 
-Gesture Mapping
+## Gesture Mapping
 
-Hand Mode
+### Hand Mode
 
-Gesture	Action
-
-Index finger	Move mouse
-Pinch	Click / Drag
-Index + Middle	Scroll
-Palm	Pause / Switch mode
-Fist	Resume
-
-
+| Gesture | Action |
+|---------|--------|
+| Index finger | Move mouse |
+| Pinch | Click / Drag |
+| Index + Middle | Scroll |
+| Palm | Pause / Switch mode |
+| Fist | Resume |
 
 ---
 
-Face & Eye Mode
+### Face & Eye Mode
 
-Gesture	Action
-
-Blink	Pause / Resume
-Left wink	Left click
-Right wink	Right click
-Head forward	Zoom in
-Head backward	Zoom out
-
-
+| Gesture | Action |
+|---------|--------|
+| Blink | Pause / Resume |
+| Left wink | Left click |
+| Right wink | Right click |
+| Head forward | Zoom in |
+| Head backward | Zoom out |
 
 ---
 
-Pen Mode
+### Pen Mode
 
-Gesture	Action
-
-Pinch	Draw
-Release	Stop drawing
-Palm	Exit pen mode
+| Gesture | Action |
+|---------|--------|
+| Pinch | Draw |
+| Release | Stop drawing |
+| Palm | Exit pen mode |
 
 
 
@@ -296,80 +293,91 @@ Palm	Exit pen mode
 
 Installation & Running
 
-Clone Repository
+### Clone Repository
 
-git clone <repo-url>
+```bash
+git clone https://github.com/manidharreddy0909/touchless-ai-reader.git
 cd touchless-ai-reader
+```
 
-Create Virtual Environment
+### Create Virtual Environment
 
+```bash
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate  # On Windows
+# or
+source venv/bin/activate  # On macOS/Linux
+```
 
-Install Dependencies
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-Run Application
+### Run Application
 
+```bash
 python app.py
+```
 
 
 ---
 
-EXE Build Instructions
+## EXE Build Instructions
 
+To create a standalone executable:
+
+```bash
 pip install pyinstaller
 pyinstaller --onefile app.py
+```
 
-The EXE will be available in the dist folder.
+The EXE will be available in the `dist` folder.
 
 
 ---
 
-Troubleshooting
+## Troubleshooting
 
-Camera not opening
+### Camera not opening
+- Close other apps using camera
+- Restart system
+- Try changing camera index in `settings.json`
 
-Close other apps using camera
+### Gestures flickering
+- Improve lighting conditions
+- Reduce background movement
+- Adjust cooldown thresholds in settings
+- Ensure camera is stable
 
-Restart system
-
-Try changing camera index
-
-
-Gestures flickering
-
-Improve lighting
-
-Reduce background movement
-
-Adjust cooldown thresholds
-
-
-Face / Eye gestures not detected
-
-Ensure full face visibility
-
-Avoid strong backlight
-
-Avoid glasses during testing
+### Face / Eye gestures not detected
+- Ensure full face visibility
+- Avoid strong backlight
+- Remove glasses (if they cause reflections)
+- Adjust lighting for better face mesh detection
 
 
 
 ---
 
-Gesture Demo (Add GIFs)
+Gesture Demo
 
-Add demo GIFs here:
+Demo GIFs coming soon! Record your own gestures using:
 
-hand_mouse.gif
+```bash
+python src/data/collect_hand_data.py  # Record hand gesture data
+python debugfiles/test_hand_gestures.py  # Test hand detection
+python debugfiles/test_face_debug.py  # Test face detection
+```
 
-scroll.gif
-
-blink_click.gif
-
-pen_draw.gif
+**Gesture Examples:**
+- 👆 Hand mouse control
+- ✌️ Two-finger scrolling
+- 🤏 Pinch click and drag
+- 👋 Palm pause/resume
+- 😑 Eye blink click
+- 😜 Wink for left/right click
 
 
 
