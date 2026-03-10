@@ -37,16 +37,27 @@ env/
 .DS_Store
 Thumbs.db
 
-# Build artifacts (PyInstaller)
+# Build artifacts (PyInstaller) - these are large binaries
 *.exe
 *.pkg
 *.app
+*.dll
+dist/
+build/
+*.zip
+*.egg-info/
 
-# Models and data
+# Large model files
 *.model
+*.pkl
+*.h5
+*.pth
 models/trained/
+models/*.pkl
 
 # Misc
 debugfiles/
+*.log
+ai_reader.log
 *.log
 .pytest_cache/
