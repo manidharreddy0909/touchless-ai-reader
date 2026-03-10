@@ -1,0 +1,90 @@
+Educational & Research License Agreement
+
+Version 1.0 - March 2026
+
+TERMS AND CONDITIONS
+
+1. GRANT OF LICENSE
+This project ("Touchless AI Reader") is provided for educational and research
+purposes only. You are granted a limited, non-exclusive, non-transferable license
+to:
+- Download and install this software
+- Use it for educational purposes
+- Modify it for research purposes
+- Study the source code
+
+2. RESTRICTIONS
+You may NOT:
+- Use this software for commercial purposes without explicit written permission
+- Redistribute this software for profit
+- Remove or alter copyright/license notices
+- Merge this code into proprietary applications without permission
+- Claim authorship of the original work
+
+3. ATTRIBUTION
+If you use or modify this software, you must:
+- Retain all copyright notices
+- Credit the original author: Manidhar Bheempadu
+- Include a link to the original repository:
+  https://github.com/manidharreddy0909/touchless-ai-reader
+
+4. NO WARRANTY
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+5. LIMITATION OF LIABILITY
+In no event shall the authors or copyright holders be liable for any special,
+indirect, incidental, or consequential damages arising from the use or inability
+to use the software.
+
+6. ACCEPTABLE USE
+This software is acceptable for:
+- Academic research projects
+- Educational coursework
+- Technology demonstrations
+- Portfolio projects
+- Learning and skill development
+
+7. COMMERCIAL USE
+For commercial deployment or integration into proprietary systems, please
+contact the author for a commercial license:
+- Email: [contact information]
+- GitHub: https://github.com/manidharreddy0909
+
+8. THIRD-PARTY LIBRARIES
+This project uses open-source libraries with their own licenses:
+- OpenCV: BSD License
+- MediaPipe: Apache 2.0
+- NumPy: BSD License
+- Please refer to requirements.txt and respective library licenses
+
+9. TERMINATION
+This license is effective until terminated. Your rights under this license will
+terminate automatically if you fail to comply with any terms.
+
+10. GOVERNING LAW
+This agreement shall be governed by and construed in accordance with the laws
+applicable in the jurisdiction where the author resides.
+
+11. DISCLAIMER
+The author makes no claims about the fitness of this software for any particular
+purpose. Users assume all responsibility for use of this software.
+
+---
+
+BY DOWNLOADING OR USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ,
+UNDERSTOOD, AND AGREE TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS
+LICENSE.
+
+---
+
+For more information or to request a different license agreement, please contact
+the original author.
+
+Last Updated: March 10, 2026
+Author: Manidhar Bheempadu
